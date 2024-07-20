@@ -17,14 +17,17 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        $project= new Project();
-        //salvo i dati in tabella
-        $project->title=$faker->sentence(10);
-        $project->content=$faker->text(500);
-        $project->slug=Str::of($project->title)->slug('-');
-
-
-        
-        $project->save();
+        for ($i=0; $i < 20; $i++) { 
+            
+            $project= new Project();
+            //salvo i dati in tabella
+            $project->title=$faker->sentence();
+            $project->content=$faker->text();
+            $project->slug=Str::of($project->title)->slug('-');
+    
+    
+            
+            $project->save();
+        }
     }
 }
