@@ -28,7 +28,7 @@
                 <td>{{$i->slug}}</td>
                 <td>
                   <div class="d-flex gap-2">
-                    <a href="#" class="btn btn-info" as="button"><i class="fab fa-searchengin"></i></a>
+                    <a href="{{ route('admin.project.show', $i->id)}}" class="btn btn-info" as="button"><i class="fab fa-searchengin"></i></a>
                     <a href="#" class="btn btn-warning" as="button"><i class="fas fa-pencil"></i></a>
                     <a href="#" class="btn btn-danger" as="button"><i class="fas fa-bomb"></i></a>
                   </div>
