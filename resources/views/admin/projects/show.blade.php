@@ -7,6 +7,7 @@
         
       </div>
        <p>{{$project->content}}</p>
+       <button type="button" class="btn btn-secondary"><a href="{{route('admin.project.index')}}">Torna alla Home</a></button>
     </div>
 
 @endsection
