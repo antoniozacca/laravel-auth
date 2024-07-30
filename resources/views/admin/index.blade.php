@@ -5,7 +5,7 @@
 
         <h1>Lista dei progetti</h1>
         <div>
-          <button class="btn btn-primary">Crea nuovo progetto</button>
+          <a class="btn btn-primary" as="button" href="{{route('admin.project.create')}}">Crea un nuovo progetto</a>
         </div>
       </div>
         <table class="table">

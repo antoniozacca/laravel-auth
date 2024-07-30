@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -22,16 +23,24 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreProjectRequest $request)
-    {
-        //
-    }
+{
+    $data= $request->validated();
+    $slug= Str::of($data['title'])->slug();
+    $data['slug']=$slug;
+    $project= new Project();
+    $project->title= $data['title'];
+    $project->content= $data['content']; // Assicurarsi che il campo corrisponda
+    $project->save();
+    return redirect()->route('admin.project.index'); // Rimuovere il commento per il redirect
+}
 
     /**
      * Display the specified resource.
